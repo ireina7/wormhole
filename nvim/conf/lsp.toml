@@ -3,7 +3,7 @@ clangd = true
 lua_ls = true
 rust_analyzer = true
 pylsp = true
-gopls = false
+gopls = true
 
 [pkg]
 clangd = 'clangd'

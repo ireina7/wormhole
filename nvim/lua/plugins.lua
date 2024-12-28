@@ -73,6 +73,15 @@ M.indent_blankline = {
     opts = {},
 }
 
+M.nvim_tree = {
+      "nvim-tree/nvim-tree.lua",
+      version = "*",
+      lazy = false,
+      dependencies = {
+            "nvim-tree/nvim-web-devicons",
+      },
+}
+
 function M.setup()
     require("lazy").setup({
         M.catppuccin,
@@ -95,6 +104,7 @@ function M.setup()
         'mfussenegger/nvim-dap',
         'j-hui/fidget.nvim',
         M.indent_blankline,
+        M.nvim_tree,
     })
 end
 
