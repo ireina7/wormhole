@@ -1,0 +1,14 @@
+[enable]
+clangd = true
+lua_ls = true
+rust_analyzer = true
+pylsp = true
+gopls = false
+
+[pkg]
+clangd = 'clangd'
+lua_ls = 'lua-language-server'
+rust_analyzer = 'rust-analyzer'
+pylsp = 'python-lsp-server'
+gopls = 'gopls'
+
