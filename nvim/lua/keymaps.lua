@@ -52,6 +52,8 @@ nmap <F10> <cmd>call vimspector#StepInto()<cr>")
     -- keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
     keymap.set('n', '<leader>fd', "<cmd>Telescope diagnostics<CR>", { desc = 'Telescope diagnostics' })
 
+    keymap.set('n', '<leader>b', "<cmd>NvimTreeToggle<CR>", { desc = 'Toggle nvim tree' })
+
     -- vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 end
 

@@ -1,5 +1,5 @@
-Driver = {}
-function Driver.setup()
+M = {}
+function M.setup()
     require('plugins').setup()
     require('options').setup()
     require('keymaps').setup()
@@ -9,4 +9,4 @@ function Driver.setup()
     require('edit').setup()
 end
 
-return Driver
+return M
