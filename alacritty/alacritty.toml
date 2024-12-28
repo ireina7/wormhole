@@ -1,0 +1,18 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/palenight.toml"
+]
+
+[terminal.shell]
+program = "/bin/zsh"
+
+[font]
+normal = { family = "0xProto Nerd Font Mono", style = "Regular" }
+size = 17.5
+
+[window]
+startup_mode = "Maximized"
+opacity = 0.95
+blur = false
+decorations ="buttonless"
+option_as_alt = "Both"
