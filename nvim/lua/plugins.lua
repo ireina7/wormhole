@@ -74,12 +74,17 @@ M.indent_blankline = {
 }
 
 M.nvim_tree = {
-      "nvim-tree/nvim-tree.lua",
-      version = "*",
-      lazy = false,
-      dependencies = {
-            "nvim-tree/nvim-web-devicons",
-      },
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
+    },
+}
+
+M.nvim_cmp = {
+    "hrsh7th/nvim-cmp",
+    event = { "InsertEnter", "CmdlineEnter" },
 }
 
 function M.setup()
@@ -88,7 +93,7 @@ function M.setup()
         M.mason,
         "williamboman/mason-lspconfig.nvim",
         M.lsp_config,
-        "hrsh7th/nvim-cmp",
+        M.nvim_cmp,
         "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-buffer",
