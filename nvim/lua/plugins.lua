@@ -65,6 +65,14 @@ M.telescope = {
     dependencies = { 'nvim-lua/plenary.nvim' }
 }
 
+M.indent_blankline = {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+}
+
 function M.setup()
     require("lazy").setup({
         M.catppuccin,
@@ -86,6 +94,7 @@ function M.setup()
         M.telescope,
         'mfussenegger/nvim-dap',
         'j-hui/fidget.nvim',
+        M.indent_blankline,
     })
 end
 
