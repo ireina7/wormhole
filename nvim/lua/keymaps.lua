@@ -44,6 +44,7 @@ nmap <F10> <cmd>call vimspector#StepInto()<cr>")
     keymap.set("n", "<space>a", vim.lsp.buf.code_action, { noremap = true, silent = true })
     keymap.set('n', 'gr', builtin.lsp_references, { noremap = true, silent = true })
     keymap.set('n', 'gr', vim.lsp.buf.hover, { noremap = true, silent = true })
+    keymap.set('n', 'g?', vim.diagnostic.open_float, { noremap = true, silent = true })
     -- keymap.set('n', 'gh', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 
     keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
