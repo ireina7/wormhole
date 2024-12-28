@@ -1,5 +1,5 @@
 Driver = {}
-function Driver.init()
+function Driver.setup()
     require('plugins').setup()
     require('options').setup()
     require('keymaps').setup()

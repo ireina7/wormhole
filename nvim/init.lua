@@ -1,3 +1,3 @@
-require('driver').init()
+require('driver').setup()
 
 
