@@ -2,18 +2,20 @@
 A wormhole which connects development environments
 
 ## Prerequisites
-- bash
-- Neovim, luajit
+- Bash
+- Git
+- Neovim, Luajit
 - Alacritty
 - Zellij
 
 ## Workflows
-- lua
-- clang
-- rust
-- go
+- Lua
+- Clang
+- Rust
+- Python
+- Go
 
 ## Deployment
 ```sh
-sh deploy.sh <target>
+sh deploy.sh
 ```
