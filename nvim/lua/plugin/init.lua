@@ -111,6 +111,9 @@ function M.setup()
         M.indent_blankline,
         M.nvim_tree,
     })
+
+    require('plugin/complete').setup()
+    require('plugin/edit').setup()
 end
 
 return M

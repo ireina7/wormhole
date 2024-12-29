@@ -1,12 +1,10 @@
 M = {}
 function M.setup()
-    require('plugins').setup()
+    require('plugin').setup()
     require('lsp').setup()
     require('options').setup()
-    require('keymaps').setup()
+    require('keymap').setup()
     require('layout').setup()
-    require('prompt').setup()
-    require('edit').setup()
 end
 
 return M

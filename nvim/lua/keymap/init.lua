@@ -6,26 +6,29 @@ function M.setup()
     local keymap = vim.keymap
     local builtin = require('telescope.builtin')
 
-    -- visual line
+    -- move block up or down
     keymap.set("v", "J", ":m '>+1<CR>gv=gv")
     keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+    -- split window
     keymap.set("n", "<leader>sv", "<C-w>v")
     keymap.set("n", "<leader>sh", "<C-w>s")
-
     keymap.set("n", "<leader>nh", ":nohl<CR>")
-
-    -- nvim-tree
-    keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
     keymap.set("n", "<C-Up>", "<C-w>k")
     keymap.set("n", "<C-Down>", "<C-w>j")
     keymap.set("n", "<C-Left>", "<C-w>h")
     keymap.set("n", "<C-Right>", "<C-w>l")
+    keymap.set("n", "<S-Right>", ":bnext<CR>")
+    keymap.set("n", "<S-Left>", ":bprevious<CR>")
+
+    -- nvim-tree
+    keymap.set("n", "<leader>b", ":NvimTreeToggle<CR>")
+
+    -- Terminal
+    keymap.set('n', '<leader>t', "<cmd>new<CR><cmd>terminal<CR>i", { desc = 'Toggle terminal below' })
 
     -- comment
     keymap.set("n", "<C-/>", "gcc")
-    keymap.set("n", "<S-Right>", ":bnext<CR>")
-    keymap.set("n", "<S-Left>", ":bprevious<CR>")
 
     vim.cmd([[
 nmap <F9> <cmd>call vimspector#Launch()<cr>
@@ -45,16 +48,13 @@ nmap <F10> <cmd>call vimspector#StepInto()<cr>")
     keymap.set('n', 'gr', builtin.lsp_references, { noremap = true, silent = true })
     keymap.set('n', 'gr', vim.lsp.buf.hover, { noremap = true, silent = true })
     keymap.set('n', 'g?', vim.diagnostic.open_float, { noremap = true, silent = true })
-    -- keymap.set('n', 'gh', vim.lsp.buf.signature_help, { noremap = true, silent = true })
 
     keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
     keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
     keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-    -- keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
     keymap.set('n', '<leader>fd', "<cmd>Telescope diagnostics<CR>", { desc = 'Telescope diagnostics' })
-
-    keymap.set('n', '<leader>b', "<cmd>NvimTreeToggle<CR>", { desc = 'Toggle nvim tree' })
-
+    -- keymap.set('n', 'gh', vim.lsp.buf.signature_help, { noremap = true, silent = true })
+    -- keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
     -- vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 end
 

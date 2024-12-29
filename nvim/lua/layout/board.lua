@@ -40,7 +40,7 @@ M.shortcuts = {
         icon_hl = 'Title',
         key = 'b',
         key_format = ' %s', -- remove default surrounding `[]`
-        action = 'edit _'
+        action = 'enew'
     }
 }
 
