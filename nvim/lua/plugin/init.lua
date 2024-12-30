@@ -98,36 +98,35 @@ M.lsp_signature = {
     event = "VeryLazy",
 }
 
-function M.setup()
-    require("lazy").setup {
-        M.catppuccin,
-        M.mason,
-        "williamboman/mason-lspconfig.nvim",
-        M.lsp_config,
-        M.nvim_cmp,
-        "hrsh7th/cmp-cmdline",
-        "hrsh7th/cmp-path",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-nvim-lsp",
-        'hrsh7th/cmp-vsnip',
-        'hrsh7th/vim-vsnip',
-        M.inlay_hint,
-        'feline-nvim/feline.nvim',
-        'nvim-tree/nvim-web-devicons',
-        M.autopairs,
-        M.dashboard,
-        M.telescope,
-        'mfussenegger/nvim-dap',
-        'j-hui/fidget.nvim',
-        M.indent_blankline,
-        M.nvim_tree,
-        "SmiteshP/nvim-navic",
-        M.outline,
-        M.lsp_signature,
-    }
+M.plugins = {
+    M.catppuccin,
+    M.mason,
+    "williamboman/mason-lspconfig.nvim",
+    M.lsp_config,
+    M.nvim_cmp,
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-nvim-lsp",
+    'hrsh7th/cmp-vsnip',
+    'hrsh7th/vim-vsnip',
+    M.inlay_hint,
+    'feline-nvim/feline.nvim',
+    'nvim-tree/nvim-web-devicons',
+    M.autopairs,
+    M.dashboard,
+    M.telescope,
+    'mfussenegger/nvim-dap',
+    'j-hui/fidget.nvim',
+    M.indent_blankline,
+    M.nvim_tree,
+    "SmiteshP/nvim-navic",
+    M.outline,
+    M.lsp_signature,
+}
 
-    require('plugin/complete').setup()
-    require('plugin/edit').setup()
+function M.setup()
+    require("lazy").setup(M.plugins)
 end
 
 return M

@@ -1,7 +1,10 @@
 local M = {}
 
 function M.setup()
+    require('edit/complete').setup()
     require('nvim-autopairs').setup()
+
+    -- indent guide lines
     require("ibl").setup {
         exclude = {
             filetypes = {

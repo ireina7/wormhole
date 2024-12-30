@@ -6,6 +6,7 @@ function M.setup()
     require('layout/tree').setup()
     require('layout/board').setup()
     require('layout/outline').setup()
+    require('layout.nav').setup()
 end
 
 
