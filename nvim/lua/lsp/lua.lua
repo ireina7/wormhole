@@ -27,6 +27,9 @@ local M = {
             }
         })
     end,
+
+    on_attach = require('lsp/lang').on_attach,
+
     settings = {
         Lua = {
             diagnostics = {

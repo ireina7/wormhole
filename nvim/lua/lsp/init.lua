@@ -43,6 +43,7 @@ function M.pkg_of(key)
     return pkg or key
 end
 
+
 function M.lang(key)
     return function(config)
         -- if enabled
@@ -75,10 +76,13 @@ function M.setup()
         PATH = "append"
     })
 
+    -- require('nvim-navic').setup()
+    vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
     M.lang('clangd')(require('lsp/clangd'))
     M.lang('lua_ls')(require('lsp/lua'))
-    M.lang('rust_analyzer') {}
-    M.lang('pylsp') {}
+    M.lang('rust_analyzer')(require('lsp/rust'))
+    M.lang('pylsp')(require('lsp/python'))
     M.lang('gopls')(require('lsp/go'))
 end
 

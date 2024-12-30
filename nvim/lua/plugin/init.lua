@@ -87,8 +87,14 @@ M.nvim_cmp = {
     event = { "InsertEnter", "CmdlineEnter" },
 }
 
+M.outline = {
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+}
+
 function M.setup()
-    require("lazy").setup({
+    require("lazy").setup {
         M.catppuccin,
         M.mason,
         "williamboman/mason-lspconfig.nvim",
@@ -110,7 +116,9 @@ function M.setup()
         'j-hui/fidget.nvim',
         M.indent_blankline,
         M.nvim_tree,
-    })
+        "SmiteshP/nvim-navic",
+        M.outline,
+    }
 
     require('plugin/complete').setup()
     require('plugin/edit').setup()

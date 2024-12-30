@@ -1,6 +1,7 @@
 local M = {
     cmd = {"gopls"},
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    on_attach = require('lsp/lang').on_attach,
     settings = {
         gopls = {
             gofumpt = true,
