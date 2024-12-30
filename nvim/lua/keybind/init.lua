@@ -30,6 +30,9 @@ function M.setup()
     -- comment
     keymap.set("n", "<C-/>", "gcc")
 
+    keymap.set("i", "<C-e>", "<C-o>$")
+    keymap.set("i", "<C-a>", "<C-o>0")
+
     vim.cmd([[
 nmap <F9> <cmd>call vimspector#Launch()<cr>
 nmap <F5> <cmd>call vimspector#StepOver()<cr>
@@ -62,9 +65,4 @@ nmap <F10> <cmd>call vimspector#StepInto()<cr>")
     -- vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 end
 
-
 return M
-
-
-
-
