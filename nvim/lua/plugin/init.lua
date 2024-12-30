@@ -1,19 +1,5 @@
 local M = {}
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
-end
-vim.opt.rtp:prepend(lazypath)
-
-
 
 -- Plugins
 M.catppuccin = {
@@ -43,7 +29,7 @@ M.inlay_hint = {
 M.rustaceanvim = {
     'mrcjkb/rustaceanvim',
     version = '^5', -- Recommended
-    lazy = false, -- This plugin is already lazy
+    lazy = false,   -- This plugin is already lazy
 }
 
 M.autopairs = {
@@ -55,7 +41,7 @@ M.autopairs = {
 M.dashboard = {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
-    dependencies = { {'nvim-tree/nvim-web-devicons'} }
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 }
 
 M.telescope = {
@@ -126,6 +112,7 @@ M.plugins = {
 }
 
 function M.setup()
+    require('plugin/lazy').setup() -- bootstrap
     require("lazy").setup(M.plugins)
 end
 

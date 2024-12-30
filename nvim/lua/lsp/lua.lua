@@ -50,6 +50,5 @@ local M = {
     }
 }
 
-M.lazy_path = lazy_path
 
 return M

@@ -21,7 +21,6 @@ function M.read_conf()
     return conf
 end
 
-
 function M.config_of(key)
     local mod = 'lspconfig/configs/' .. key
     return require(mod)
@@ -42,7 +41,6 @@ function M.pkg_of(key)
     local pkg = M.conf.pkg[key]
     return pkg or key
 end
-
 
 function M.lang(key)
     return function(config)
@@ -65,7 +63,7 @@ end
 function M.setup()
     M.conf = M.read_conf()
 
-    require("mason").setup({
+    require("mason").setup {
         ui = {
             icons = {
                 package_installed = "✓",
@@ -74,27 +72,26 @@ function M.setup()
             }
         },
         PATH = "append"
-    })
+    }
     require('lsp_signature').setup {}
 
     vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-        local mode = vim.api.nvim_get_mode().mode
-        local filetype = vim.bo.filetype
-        if vim.bo.modified == true and mode == 'n' and filetype ~= "oil" then
-            vim.cmd('lua vim.lsp.buf.format()')
-        else
+        callback = function()
+            local mode = vim.api.nvim_get_mode().mode
+            local filetype = vim.bo.filetype
+            if vim.bo.modified == true and mode == 'n' and filetype ~= "oil" then
+                vim.cmd('lua vim.lsp.buf.format()')
+            else
+            end
         end
-    end
-})
+    })
 
-    M.lang('clangd')(require('lsp/clangd'))
+    M.lang('clangd')(require('lsp/clang'))
     M.lang('lua_ls')(require('lsp/lua'))
     M.lang('rust_analyzer')(require('lsp/rust'))
     M.lang('pylsp')(require('lsp/python'))
     M.lang('gopls')(require('lsp/go'))
 end
-
 
 return M
 
@@ -175,4 +172,3 @@ return M
 --         max_width = math.floor(vim.o.columns * 0.4),
 --     })
 -- end
-
