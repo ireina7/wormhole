@@ -79,6 +79,8 @@ function M.setup()
     -- require('nvim-navic').setup()
     vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
+    require('lsp_signature').setup {}
+
     M.lang('clangd')(require('lsp/clangd'))
     M.lang('lua_ls')(require('lsp/lua'))
     M.lang('rust_analyzer')(require('lsp/rust'))

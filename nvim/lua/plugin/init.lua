@@ -93,6 +93,11 @@ M.outline = {
     cmd = { "Outline", "OutlineOpen" },
 }
 
+M.lsp_signature = {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+}
+
 function M.setup()
     require("lazy").setup {
         M.catppuccin,
@@ -118,6 +123,7 @@ function M.setup()
         M.nvim_tree,
         "SmiteshP/nvim-navic",
         M.outline,
+        M.lsp_signature,
     }
 
     require('plugin/complete').setup()
