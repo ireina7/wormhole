@@ -22,11 +22,18 @@ function M.read_conf()
     return conf
 end
 
+---Get config key of `lang`, which is configured in TOML
+---@param lang string
+---@return string
+function M.config_key(lang)
+    return M.conf.config[lang] or lang
+end
+
 --- Get default config of language from package `lspconfig`
 --- @param key string
 --- @return table
 function M.config_of(key)
-    local config_key = M.conf.config[key] or key
+    local config_key = M.config_key(key)
     local mod = 'lspconfig/configs/' .. config_key
     return require(mod)
 end
@@ -60,7 +67,7 @@ function M.lang(key)
     return function(config)
         -- if enabled
         if M.conf.enable[key] then
-            local config_key = M.conf.config[key] or key
+            local config_key = M.config_key(key)
             local server = M.cmd_of(key)
             local pkg = M.pkg_of(key)
 
@@ -76,7 +83,7 @@ function M.lang(key)
 end
 
 function M.setup()
-    M.conf = M.read_conf()
+    M.conf = M.read_conf() -- MUST read first!!!
 
     require("mason").setup {
         ui = {
@@ -106,7 +113,7 @@ function M.setup()
     M.lang('rust')(require('lsp/rust'))
     M.lang('python')(require('lsp/python'))
     M.lang('go')(require('lsp/go'))
-    M.lang('latex') {}
+    M.lang('latex')(require('lsp/latex'))
 end
 
 return M
