@@ -2,7 +2,8 @@ local M = {}
 
 local lspconfig = require('lspconfig')
 
-
+--- Read configuration from TOML file
+--- @return table
 function M.read_conf()
     local toml = require('util/toml')
     local root = vim.fn.stdpath("config")
@@ -21,11 +22,17 @@ function M.read_conf()
     return conf
 end
 
+--- Get default config of language from package `lspconfig`
+--- @param key string
+--- @return table
 function M.config_of(key)
     local mod = 'lspconfig/configs/' .. key
     return require(mod)
 end
 
+--- Get binary executable name from `lspconfig`'s default configuration'
+--- @param key string
+--- @return string
 function M.cmd_of(key)
     local cmds = M.config_of(key).default_config.cmd
     local cmd = ''
@@ -37,11 +44,17 @@ function M.cmd_of(key)
     return cmd
 end
 
+--- Get lsp server package name to download from `Mason`
+--- @param key string
+--- @return string
 function M.pkg_of(key)
     local pkg = M.conf.pkg[key]
     return pkg or key
 end
 
+--- Config language
+--- @param key string
+--- @return function
 function M.lang(key)
     return function(config)
         -- if enabled

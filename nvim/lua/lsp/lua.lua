@@ -8,10 +8,7 @@ local M = {
         end
 
         local lazy_path = function()
-            local path = vim.fn.stdpath("data")
-            if type(path) == 'table' then
-                path = path[1]
-            end
+            local path = require('util/path').nvim_data_path()
             return require('util/path').path_join(path, "lazy")
         end
 

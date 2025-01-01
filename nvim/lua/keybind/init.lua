@@ -59,6 +59,7 @@ nmap <F10> <cmd>call vimspector#StepInto()<cr>")
     keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
     keymap.set('n', '<leader>fd', "<cmd>Telescope diagnostics<CR>", { desc = 'Telescope diagnostics' })
     keymap.set("n", "<leader>fo", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+    keymap.set("n", "<leader>fp", "<cmd>lua =vim.fn.expand('%')<CR>", { desc = "Show current file path" })
 
     -- keymap.set('n', 'gh', vim.lsp.buf.signature_help, { noremap = true, silent = true })
     -- keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
