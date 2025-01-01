@@ -97,6 +97,7 @@ function M.setup()
     }
     require('lsp_signature').setup {}
 
+    -- Auto fmt on save
     vim.api.nvim_create_autocmd("BufWritePre", {
         callback = function()
             local mode = vim.api.nvim_get_mode().mode
