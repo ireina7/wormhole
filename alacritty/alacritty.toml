@@ -5,6 +5,7 @@ import = [
 
 [terminal.shell]
 program = "/bin/zsh"
+args = ["-l"]
 
 [font]
 normal = { family = "0xProto Nerd Font Mono", style = "Regular" }
