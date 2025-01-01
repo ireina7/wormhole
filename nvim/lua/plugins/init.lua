@@ -112,7 +112,7 @@ M.plugins = {
 }
 
 function M.setup()
-    require('plugin/lazy').setup() -- bootstrap
+    require('plugins/lazy').setup() -- bootstrap
     require("lazy").setup(M.plugins)
 end
 

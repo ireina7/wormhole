@@ -1,6 +1,6 @@
 M = {}
 function M.setup()
-    require('plugin').setup()
+    require('plugins').setup()
     require('lsp').setup()
     require('edit').setup()
     require('options').setup()

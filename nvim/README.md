@@ -1,0 +1,2 @@
+# Nvim configurations and scripts
+
