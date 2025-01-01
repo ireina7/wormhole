@@ -1,14 +1,25 @@
 [enable]
-clangd = true
-lua_ls = true
-rust_analyzer = true
-pylsp = true
-gopls = false
+clang = true
+lua = true
+rust = true
+python = true
+go = false
+latex = true
+
+[config]
+clang = 'clangd'
+lua = 'lua_ls'
+rust = 'rust_analyzer'
+python = 'pylsp'
+go = 'gopls'
+latex = 'texlab'
 
 [pkg]
-clangd = 'clangd'
-lua_ls = 'lua-language-server'
-rust_analyzer = 'rust-analyzer'
-pylsp = 'python-lsp-server'
-gopls = 'gopls'
+clang = 'clangd'
+lua = 'lua-language-server'
+rust = 'rust-analyzer'
+python = 'python-lsp-server'
+go = 'gopls'
+latex = 'texlab'
+
 

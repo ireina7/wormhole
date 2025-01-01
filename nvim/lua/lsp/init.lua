@@ -26,7 +26,8 @@ end
 --- @param key string
 --- @return table
 function M.config_of(key)
-    local mod = 'lspconfig/configs/' .. key
+    local config_key = M.conf.config[key] or key
+    local mod = 'lspconfig/configs/' .. config_key
     return require(mod)
 end
 
@@ -59,6 +60,7 @@ function M.lang(key)
     return function(config)
         -- if enabled
         if M.conf.enable[key] then
+            local config_key = M.conf.config[key] or key
             local server = M.cmd_of(key)
             local pkg = M.pkg_of(key)
 
@@ -68,7 +70,7 @@ function M.lang(key)
             end
 
             -- setup with input config
-            lspconfig[key].setup(config)
+            lspconfig[config_key].setup(config)
         end
     end
 end
@@ -99,11 +101,12 @@ function M.setup()
         end
     })
 
-    M.lang('clangd')(require('lsp/clang'))
-    M.lang('lua_ls')(require('lsp/lua'))
-    M.lang('rust_analyzer')(require('lsp/rust'))
-    M.lang('pylsp')(require('lsp/python'))
-    M.lang('gopls')(require('lsp/go'))
+    M.lang('clang')(require('lsp/clang'))
+    M.lang('lua')(require('lsp/lua'))
+    M.lang('rust')(require('lsp/rust'))
+    M.lang('python')(require('lsp/python'))
+    M.lang('go')(require('lsp/go'))
+    M.lang('latex') {}
 end
 
 return M
