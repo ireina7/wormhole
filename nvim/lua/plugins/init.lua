@@ -110,7 +110,6 @@ M.plugins = {
     M.dashboard,
     M.telescope,
     'mfussenegger/nvim-dap',
-    'j-hui/fidget.nvim',
     M.indent_blankline,
     M.nvim_tree,
     "SmiteshP/nvim-navic",
