@@ -84,6 +84,13 @@ M.lsp_signature = {
     event = "VeryLazy",
 }
 
+M.fidget = {
+    "j-hui/fidget.nvim",
+    opts = {
+        -- options
+    },
+}
+
 M.plugins = {
     M.catppuccin,
     M.mason,
@@ -109,6 +116,7 @@ M.plugins = {
     "SmiteshP/nvim-navic",
     M.outline,
     M.lsp_signature,
+    M.fidget,
 }
 
 function M.setup()
