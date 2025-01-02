@@ -8,7 +8,7 @@ local custom_feline = function()
 
     local catppuccin = {
         fg = "#abb2bf",
-        bg = "#303446",
+        bg = "#24273a",
         green = "#a6d189",
         yellow = "#e5c890",
         purple = "#ca9ee6",
@@ -16,8 +16,9 @@ local custom_feline = function()
         peanut = "#f6d5a4",
         red = "#e78284",
         aqua = "#61afef",
-        darkblue = "#282c34",
+        darkblue = "#24273a",
         dark_red = "#f75f5f",
+        grey = "#363a4f",
     }
 
     local vi_mode_colors = {
@@ -43,7 +44,7 @@ local custom_feline = function()
             hl = function()
                 return {
                     fg = require("feline.providers.vi_mode").get_mode_color(),
-                    bg = "darkblue",
+                    bg = "grey",
                     style = "bold",
                     name = "NeovimModeHLColor",
                 }
@@ -83,7 +84,7 @@ local custom_feline = function()
             provider = "git_diff_changed",
             hl = {
                 fg = "fg",
-                bg = "darkblue",
+                bg = "yellow",
             },
             left_sep = "block",
             right_sep = "right_filled",
@@ -195,7 +196,7 @@ local custom_feline = function()
         c.gitBranch,
         c.gitDiffAdded,
         c.gitDiffRemoved,
-        c.gitDiffChanged,
+        -- c.gitDiffChanged,
         c.separator,
     }
 
