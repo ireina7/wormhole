@@ -1,6 +1,8 @@
 # wormhole
 A wormhole which connects development environments
 
+![screenshot](./screenshot.png)
+
 ## Prerequisites
 - Bash
 - Git
