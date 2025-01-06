@@ -24,6 +24,7 @@ cursorSmoothCaretAnimation = "explicit"
 unicodeHighlight.ambiguousCharacters = false
 smoothScrolling = true
 wordWrap = "on"
+minimap.enabled = false
 inlayHints.enabled = "on"
 inlayHints.fontSize = 3
 semanticTokenColorCustomizations.enabled = true
