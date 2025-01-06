@@ -1,0 +1,64 @@
+# TOML configuration of vscode
+include = [
+    "extension/vim", 
+    "extension/latex",
+    "lang",
+    "etc",
+]
+
+[window]
+newWindowDimensions = "maximized"
+zoomLevel = 0.8
+
+[editor]
+fontSize = 14
+fontFamily = "'JetBrains Mono', Monaco, Menlo, 'Courier New', monospace"
+fontLigatures = true
+tabSize = 4
+renderWhitespace = "selection"
+detectIndentation = true
+cursorStyle = "block"
+bracketPairColorization.enabled = true
+guides.bracketPairs = "active"
+cursorSmoothCaretAnimation = "explicit"
+unicodeHighlight.ambiguousCharacters = false
+smoothScrolling = true
+wordWrap = "on"
+inlayHints.enabled = "on"
+inlayHints.fontSize = 3
+semanticTokenColorCustomizations.enabled = true
+
+[editor.semanticTokenColorCustomizations.rules]
+'*'.mutable = {underline = true}
+
+[workbench]
+editor.showTabs = "none"
+tree.indent = 20
+colorTheme = "Catppuccin Frappé"
+iconTheme = "catppuccin-frappe"
+list.smoothScrolling = true
+editor.wrapTabs = true
+
+[terminal.integrated]
+fontSize = 14
+defaultProfile.osx = "zsh"
+gpuAcceleration = "off"
+enableMultiLinePasteWarning = "auto"
+smoothScrolling = true
+
+[terminal.integrated.profiles.osx]
+bash = {path = "bash", args = ["-l"], icon = "terminal-bash"}
+zsh = {path = "zsh", args = ["-l"]}
+
+[explorer]
+confirmDragAndDrop = false
+confirmDelete = false
+
+[search]
+followSymlinks = false
+
+[debug]
+console.fontSize = 15
+
+[chat]
+editor.fontSize = 14

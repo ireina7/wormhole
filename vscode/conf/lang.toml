@@ -1,0 +1,56 @@
+['[rust]']
+editor.defaultFormatter = "rust-lang.rust-analyzer"
+editor.formatOnSave = true
+
+['[markdown]']
+editor.defaultFormatter = "fcrespo82.markdown-table-formatter"
+
+['[json]']
+editor.defaultFormatter = "esbenp.prettier-vscode"
+
+['[python]']
+editor.formatOnType = true
+
+['[cpp]']
+editor.inlayHints.enabled = "on"
+
+
+[gopls]
+ui.semanticTokens = true
+
+[go.inlayHints]
+compositeLiteralFields = true
+rangeVariableTypes = true
+constantValues = true
+parameterNames = true
+
+[rust-analyzer]
+cargo.features = "all"
+cargo.sysrootQueryMetadata = "cargo_metadata"
+
+[markdown]
+preview.fontSize = 15
+
+[lean4]
+automaticallyBuildDependencies = true
+
+[clangd]
+fallbackFlags = [
+    "-std=c++17",
+    "-I/usr/local/opt/llvm/include/c++/v1"
+]
+arguments = [
+    "--log=verbose",
+    "-j=4",
+    "--background-index",
+    "--clang-tidy",
+    "--fallback-style=LLVM",
+    "--header-insertion=iwyu",
+    "--query-driver=/usr/local/opt/llvm/bin/clang++",
+    "--inlay-hints=true"
+]
+inactiveRegions.useBackgroundHighlight = true
+inlayHints.support = true
+
+[C_Cpp]
+default.cppStandard = "c++11"

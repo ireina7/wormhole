@@ -1,0 +1,74 @@
+[vim]
+smartRelativeLine = true
+easymotion = true
+incsearch = true
+useSystemClipboard = true
+useCtrlKeys = true
+hlsearch = true
+leader = "<space>"
+cursorStylePerMode.insert = "line-thin"
+cursorStylePerMode.normal = "block"
+
+[vim.handleKeys]
+'<C-a>' = false
+'<C-e>' = false
+'<C-f>' = false
+
+[[vim.normalModeKeyBindings]]
+before = ["<leader>", "w"]
+commands = ["workbench.action.switchWindow"]
+[[vim.normalModeKeyBindings]]
+before = ["<leader>", "t"]
+commands = ["workbench.action.terminal.toggleTerminal"]
+[[vim.normalModeKeyBindings]]
+before = ["<leader>", "s"]
+commands = ["workbench.action.showAllSymbols"]
+[[vim.normalModeKeyBindings]]
+before = ["<leader>","f"]
+commands = ["workbench.action.quickOpen"]
+[[vim.normalModeKeyBindings]]
+before =  ["<leader>","r"]
+commands =  ["workbench.action.openRecent"]
+[[vim.normalModeKeyBindings]]
+before = ["<leader>","a"]
+commands = ["editor.action.quickFix"]
+[[vim.normalModeKeyBindings]]
+before = ["<leader>", "p"]
+commands = ["workbench.action.showCommands"]
+[[vim.normalModeKeyBindings]]
+before = ["g", "r"]
+commands = ["editor.action.goToReferences"]
+[[vim.normalModeKeyBindings]]
+before = ["g", "i"]
+commands = ["editor.action.goToImplementation"]
+[[vim.normalModeKeyBindings]]
+before = [":"]
+commands = ["workbench.action.showCommands"]
+silent = true
+
+[[vim.insertModeKeyBindings]]
+before = ["j", "j"]
+after = ["<Esc>"]
+[[vim.insertModeKeyBindings]]
+before = ["<C-j>"]
+commands = ["cursorDown"]
+[[vim.insertModeKeyBindings]]
+before = ["<C-k>"]
+commands = ["cursorUp"]
+[[vim.insertModeKeyBindings]]
+before = ["<C-h>"]
+commands = ["cursorLeft"]
+[[vim.insertModeKeyBindings]]
+before = ["<C-l>"]
+commands = ["cursorRight"]
+
+[[vim.normalModeKeyBindingsNonRecursive]]
+before = ["<leader>", "d"]
+after = ["d", "d"]
+[[vim.normalModeKeyBindingsNonRecursive]]
+before = ["<C-n>"]
+commands = [":nohl"]
+[[vim.normalModeKeyBindingsNonRecursive]]
+before = ["K"]
+commands = ["lineBreakInsert"]
+silent = true

@@ -1,0 +1,15 @@
+[git]
+autofetch = true
+
+[makefile]
+configureOnOpen = false
+
+[cmake]
+pinnedCommands = [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+]
+
+[notebook.cellToolbarLocation]
+default = "right"
+jupyter-notebook = "left"
