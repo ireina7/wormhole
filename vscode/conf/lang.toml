@@ -50,7 +50,3 @@ arguments = [
     "--inlay-hints=true"
 ]
 inactiveRegions.useBackgroundHighlight = true
-inlayHints.support = true
-
-[C_Cpp]
-default.cppStandard = "c++11"
